@@ -3,14 +3,14 @@ import { Application } from "probot";
 export = (app: Application) => {
   // Pull Requestが作成されたタイミングで呼び出されます
   app.on("pull_request.opened", async (context) => {
-    // const open_add_labels: Array<string> = process.env.OPEN_ADD_LABELS as any;
+    const open_add_labels: string = process.env.OPEN_ADD_LABELS as any;
     // ラベル追加APIを呼び出す際のリクエストパラメータ生成
-    const params = context.issue({
-      labels: ["レビュー可能"],
+    const open_add_labels_params = context.issue({
+      labels: open_add_labels.split(","),
     });
 
     // 作成された Pull Requestにラベル追加
-    await context.github.issues.addLabels(params);
+    await context.github.issues.addLabels(open_add_labels_params);
   });
 
   app.on("pull_request.closed", async (context) => {
@@ -25,9 +25,9 @@ export = (app: Application) => {
     });
 
     // Reviewd を貼る
-    // const close_add_labels: Array<string> = process.env.CLOSE_ADD_LABELS as any;
+    const close_add_labels: string = process.env.CLOSE_ADD_LABELS as any;
     const close_add_labels_params = context.issue({
-      labels: ["Reviewed"],
+      labels: close_add_labels.split(","),
     });
     context.github.issues.addLabels(close_add_labels_params);
   });
