@@ -5,12 +5,13 @@ export = (app: Application) => {
   app.on("pull_request.opened", async (context) => {
     const open_add_labels: string = process.env.OPEN_ADD_LABELS as any;
     // ラベル追加APIを呼び出す際のリクエストパラメータ生成
-    const open_add_labels_params = context.issue({
-      labels: open_add_labels.split(","),
+    open_add_labels.split(",").forEach((open_add_label) => {
+      const open_add_labels_params = context.issue({
+        name: open_add_label,
+      });
+      // 作成された Pull Requestにラベル追加
+      context.github.issues.replaceLabels(open_add_labels_params);
     });
-
-    // 作成された Pull Requestにラベル追加
-    await context.github.issues.addLabels(open_add_labels_params);
   });
 
   app.on("pull_request.closed", async (context) => {
@@ -26,9 +27,11 @@ export = (app: Application) => {
 
     // Reviewd を貼る
     const close_add_labels: string = process.env.CLOSE_ADD_LABELS as any;
-    const close_add_labels_params = context.issue({
-      labels: close_add_labels.split(","),
+    close_add_labels.split(",").forEach((close_add_label) => {
+      const close_add_labels_params = context.issue({
+        name: close_add_label,
+      });
+      context.github.issues.replaceLabels(close_add_labels_params);
     });
-    context.github.issues.addLabels(close_add_labels_params);
   });
 };
