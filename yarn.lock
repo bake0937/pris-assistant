@@ -4544,10 +4544,10 @@ pretty-format@^25.2.1, pretty-format@^25.5.0:
     ansi-styles "^4.0.0"
     react-is "^16.12.0"
 
-probot@^9.5.3:
-  version "9.11.5"
-  resolved "https://registry.yarnpkg.com/probot/-/probot-9.11.5.tgz#2a27eb37cdd2cf22b757e8dc689ad589b397d2af"
-  integrity sha512-t7OoWyIkMlFcFxjywF/Oq0i093FU0RD93xWF4TOXTjyossXwVnBFDJ4jyb303VCkuwGgoNO4Uz/fdKRnC6ILgg==
+probot@^9.11.5:
+  version "9.15.1"
+  resolved "https://registry.yarnpkg.com/probot/-/probot-9.15.1.tgz#308213f29caaac19750e569e055d42994579aaa8"
+  integrity sha512-mGjVGxFoB2rO3kxgm7xW6khte/I2MhzwCXnqgDOj+TZ0n7Brj1FTUdx23OlsWdD5I8n5/YYL7ukqAg83+AAWBg==
   dependencies:
     "@octokit/app" "^4.0.0"
     "@octokit/graphql" "^4.2.0"
@@ -6044,9 +6044,9 @@ xtend@~2.1.1:
     object-keys "~0.4.0"
 
 y18n@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/y18n/-/y18n-4.0.0.tgz#95ef94f85ecc81d007c264e190a120f0a3c8566b"
-  integrity sha512-r9S/ZyXu/Xu9q1tYlpsLIsa3EeLXXk0VwlxqTcFRfg9EhMW+17kbt9G0NrgCmhGb5vT2hyhJZLfDGx+7+5Uj/w==
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-4.0.1.tgz#8db2b83c31c5d75099bb890b23f3094891e247d4"
+  integrity sha512-wNcy4NvjMYL8gogWWYAO7ZFWFfHcbdbE57tZO8e4cbpj8tfUcwrwqSl3ad8HxpYWCdXcJUCeKKZS62Av1affwQ==
 
 yallist@^2.0.0:
   version "2.1.2"
